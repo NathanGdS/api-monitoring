@@ -16,13 +16,13 @@ const server = http.createServer(function (req, res) {
 
     const method = req.method.toLowerCase();
 
+    const headers = req.headers;
+
     res.end('Hello World\n');
 
-    console.log(`
-        Request received on path: ${trimmedPath}
-        with method: ${method}
-        and these query string parameters: ${queryStringObject}
-        `);
+    console.log(`Request received on path: ${trimmedPath} with method: ${method}`);
+    console.log('Query string parameters: ', queryStringObject);
+    console.log('Headers received: ', headers);
 
 });
 
